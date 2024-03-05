@@ -1,10 +1,10 @@
 ﻿ 
 
-double homePrice = InputValues("Enter the price of the home        >>>> ");
+double homePrice = InputValues("Price of the Home    >>    ");
 
-double interestRate = InputValues("Enter the current interest rate        >>>> ");
+double interestRate = InputValues("Interest Rate        >>    ");
 
-double downPaymentPercentage = InputValues("Enter the percentage of down payment      >>>>>> ");
+double downPaymentPercentage = InputValues("Percentage as Down Payment   >>    ");
 
 
 double downPayment = DownPayment(homePrice, downPaymentPercentage);
@@ -33,9 +33,10 @@ static double DownPayment(double homePrice, double downPaymentPercentage)
 
 static double monthlyPayment1(double InterestRate, double FinanceAmount)
 {
+    double month = 30 * 12;
     double rate = (InterestRate / 100) / 12;
 
-    return (( rate + rate / (( Math.Pow((1 + rate), 360)) - 1)) * FinanceAmount );
+    return (( rate + rate / (( Math.Pow((1 + rate), month)) - 1)) * FinanceAmount );
 }
 static double FinancedAmount(double homePrice, double downPayment)
 {
@@ -52,10 +53,10 @@ static double TotalInterest(double monthlyPayment, double homePrice)
 
 static void Display(double downPayment, double totalInterest, double monthlyPayment, double financeAmount)
 {
-    Console.WriteLine($"Down Payment       : ${downPayment:F2}");
-    Console.WriteLine($"Amount Financed    : ${financeAmount:F2}");
-    Console.WriteLine($"Monthly Payment    : ${monthlyPayment:F2}");
-    Console.WriteLine($"Total Interest     : ${totalInterest:F2}");
+    Console.WriteLine($"Down Payment       :       ${downPayment:F2}");
+    Console.WriteLine($"Amount Financed    :       ${financeAmount:F2}");
+    Console.WriteLine($"Monthly Payment    :       ${monthlyPayment:F2}");
+    Console.WriteLine($"Total Interest     :       ${totalInterest:F2}");
 
 }
  
